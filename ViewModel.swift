@@ -18,10 +18,9 @@ protocol ViewOutput {
 
 protocol ViewModelable: ViewInput, ViewOutput { }
 
-
 class ViewModel: ViewModelable {
     
-    var count = BehaviorSubject(value: 0)
+    private(set) var count = BehaviorSubject(value: 0)
     
     func didTapButton() {
         let value = try? count.value()
